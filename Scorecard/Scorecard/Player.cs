@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Scorecard
 {
-    public class Player
+    internal class Player
     {
         #region Properties
         public string FirstName { get; private set; }
@@ -25,5 +25,18 @@ namespace Scorecard
         }
         #endregion
 
+        #region Overrides
+        public override bool Equals(object obj)
+        {
+            if (obj is Player)
+            {
+                var that = obj as Player;
+                return this.FirstName == that.FirstName && this.LastName == that.LastName && this.Number == that.Number;
+
+            }
+
+            return false;
+        }
+        #endregion
     }
 }

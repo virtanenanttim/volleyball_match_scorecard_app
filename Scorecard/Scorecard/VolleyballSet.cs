@@ -6,9 +6,18 @@ using System.Threading.Tasks;
 
 namespace Scorecard
 {
-    public class VolleyballSet
+    internal class VolleyballSet
     {
-        public Player[] HomeStartingLineup { get; set; }
-        public Player[] GuestStartingLineup { get; set; }
+        public int HomePoints { get; set; }
+        public int GuestPoints { get; set; }
+
+        public TeamTimeout[] HomeTimeouts { get; set; }
+        public TeamTimeout[] GuestTimeouts { get; set; }
+
+        public PlayerExchange[] HomeExchanges { get; set; }
+        public PlayerExchange[] GuestExchanges { get; set; }
+
+        public Player[] HomeLineup { get; set; }
+        public Player[] GuestLineup { get; set; }
     }
 }
