@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Scorecard
 {
-    internal class Player
+    public class Player
     {
         #region Properties
         public string FirstName { get; private set; }

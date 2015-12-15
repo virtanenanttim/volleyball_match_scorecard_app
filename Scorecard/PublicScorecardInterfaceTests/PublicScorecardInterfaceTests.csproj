@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2C554E69-AD3E-47E5-9851-0B894808A04A}</ProjectGuid>
+    <ProjectGuid>{412E2801-0B33-4B71-B378-277B067DCF02}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScorecardUnitTests</RootNamespace>
-    <AssemblyName>ScorecardUnitTests</AssemblyName>
+    <RootNamespace>PublicScorecardInterfaceTests</RootNamespace>
+    <AssemblyName>PublicScorecardInterfaceTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -50,14 +50,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="PlayerExchangeTests.cs" />
-    <Compile Include="PlayerTests.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScorecardFillerTests.cs" />
-    <Compile Include="TeamTests.cs" />
-    <Compile Include="TeamTimeoutTests.cs" />
-    <Compile Include="VolleyballMatchTests.cs" />
-    <Compile Include="VolleyballSetTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Scorecard\Scorecard.csproj">

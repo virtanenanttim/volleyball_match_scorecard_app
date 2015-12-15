@@ -1,6 +1,6 @@
 ﻿namespace Scorecard
 {
-    internal class PlayerExchange
+    public class PlayerExchange
     {
         public PlayerExchange(Player playerOut, Player playerIn, int homePoints, int guestPoints)
         {
@@ -12,7 +12,7 @@
 
         public int GuestPoints { get; internal set; }
         public int HomePoints { get; internal set; }
-        internal Player PlayerIn { get; set; }
-        internal Player PlayerOut { get; set; }
+        public Player PlayerIn { get; internal set; }
+        public Player PlayerOut { get; internal set; }
     }
 }

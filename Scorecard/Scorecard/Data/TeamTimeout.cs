@@ -1,6 +1,6 @@
 ﻿namespace Scorecard
 {
-    internal class TeamTimeout
+    public class TeamTimeout
     {
         public TeamTimeout(int homePoints, int guestPoints)
         {

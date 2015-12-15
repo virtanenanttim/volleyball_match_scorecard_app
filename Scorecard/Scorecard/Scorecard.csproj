@@ -40,13 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Player.cs" />
-    <Compile Include="PlayerExchange.cs" />
+    <Compile Include="Data\Player.cs" />
+    <Compile Include="Data\PlayerExchange.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Team.cs" />
-    <Compile Include="TeamTimeout.cs" />
-    <Compile Include="VolleyballMatch.cs" />
-    <Compile Include="VolleyballSet.cs" />
+    <Compile Include="Data\Team.cs" />
+    <Compile Include="Data\TeamTimeout.cs" />
+    <Compile Include="Data\VolleyballMatch.cs" />
+    <Compile Include="Data\VolleyballSet.cs" />
+    <Compile Include="ScorecardFiller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

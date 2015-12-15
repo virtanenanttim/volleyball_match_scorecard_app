@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Scorecard
 {
-    internal class Team
+    public class Team
     {
         public Team(string name, string abbreviation)
         {
@@ -37,6 +37,16 @@ namespace Scorecard
 
         internal void SetPlayers(Player[] players)
         {
+            if (players.Length < 6)
+            {
+                throw new ArgumentException("Too few players in team");
+            }
+
+            if (players.Length > 12)
+            {
+                throw new ArgumentException("Too many players in team");
+            }
+
             foreach (Player item in players)
             {
                 this.Players.Add(item);
