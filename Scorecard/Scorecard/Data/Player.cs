@@ -14,6 +14,8 @@ namespace Scorecard
         public string LastName { get; private set; }
 
         public int Number { get; private set; }
+
+        public bool IsCaptain { get; internal set; }
         #endregion
 
         #region Constructors

@@ -11,7 +11,7 @@ namespace Scorecard
         #region Constructor
         public ScorecardFiller()
         {
-          
+
         }
         #endregion
 
@@ -34,10 +34,51 @@ namespace Scorecard
             guest.SetPlayers(guestPlayers);
 
             this.VolleyballMatch = new VolleyballMatch(home, guest);
+
+            this.CurrentSet = 1;
+        }
+
+        public void SetHomeTeamCaptain(int number)
+        {
+            this.VolleyballMatch.HomeTeam.Players.First(p => p.Number == number).IsCaptain = true; 
+        }
+
+        public void SetGuestTeamCaptain(int number)
+        {
+            this.VolleyballMatch.GuestTeam.Players.First(p => p.Number == number).IsCaptain = true;
+        }
+
+        public bool CheckAllPrematchActionsCompleted()
+        {
+            if (this.VolleyballMatch.HomeTeam.Players.Count < 6 || this.VolleyballMatch.GuestTeam.Players.Count < 6)
+            {
+                return false;
+            }
+
+            if (!this.VolleyballMatch.HomeTeam.Players.Single(p => p.IsCaptain).IsCaptain)
+            {
+                return false;
+            }
+
+            if (!this.VolleyballMatch.GuestTeam.Players.Single(p => p.IsCaptain).IsCaptain)
+            {
+                return false;
+            }
+
+            this.CurrentSet = 1;
+
+            return true;
         }
         #endregion
 
         #region Actions during match
+        public void SetHomeLineup(int set, Player player1, Player player2, Player player3, Player player4, Player player5, Player player6)
+        {
+            this.VolleyballMatch.SetsOfTheMatch.Add(new VolleyballSet());
+
+            this.VolleyballMatch.SetsOfTheMatch[set - 1].HomeLineup = new Player[] { player1, player2, player3, player4, player5, player6 };
+        }
+
 
         #endregion
 
@@ -45,5 +86,10 @@ namespace Scorecard
 
         #endregion
 
+        #region Checks that must be done time to time
+        public int CurrentSet { get; private set; }
+
+
+        #endregion
     }
 }

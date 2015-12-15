@@ -19,9 +19,20 @@ namespace PublicScorecardInterfaceTests
 
 
             filler.SetTeams("Home Team", "HoTe", "HoT C", "", "", homePlayers, "Guest Team", "GuTe", "GuT C", "", "", guestPlayers);
+            filler.SetHomeTeamCaptain(1);
+            filler.SetGuestTeamCaptain(5);
 
             Assert.AreEqual("Home Team", filler.VolleyballMatch.HomeTeam.Name);
             Assert.AreEqual("GuTe", filler.VolleyballMatch.GuestTeam.Abbreviation);
+
+
+            filler.SetHomeLineup(1, filler.VolleyballMatch.HomeTeam.Players[0], filler.VolleyballMatch.HomeTeam.Players[1], filler.VolleyballMatch.HomeTeam.Players[2], filler.VolleyballMatch.HomeTeam.Players[3], filler.VolleyballMatch.HomeTeam.Players[4], filler.VolleyballMatch.HomeTeam.Players[5] );
+
+            Assert.IsTrue(filler.CheckAllPrematchActionsCompleted());
+
+            Assert.AreEqual(1, filler.CurrentSet);
         }
+
+
     }
 }
