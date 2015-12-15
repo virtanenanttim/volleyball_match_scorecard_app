@@ -53,7 +53,9 @@
     <Compile Include="PlayerExchangeTests.cs" />
     <Compile Include="PlayerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeamTests.cs" />
     <Compile Include="TeamTimeoutTests.cs" />
+    <Compile Include="VolleyballMatchTests.cs" />
     <Compile Include="VolleyballSetTests.cs" />
   </ItemGroup>
   <ItemGroup>
