@@ -8,16 +8,23 @@ namespace Scorecard
 {
     public class VolleyballMatch
     {
-        public VolleyballMatch(Team home, Team guest)
+        private ScorecardFiller filler;
+
+        public VolleyballMatch(ScorecardFiller filler)
+        {
+            this.filler = filler;
+        }
+
+        public VolleyballMatch(string home, string guest)
         {
             this.HomeTeam = home;
             this.GuestTeam = guest;
-            this.SetsOfTheMatch = new List<VolleyballSet>();
+            this.SetsOfTheMatch = new Dictionary<int, VolleyballSet>();
         }
 
-        public Team GuestTeam { get; internal set; }
-        public Team HomeTeam { get; internal set; }
+        public string GuestTeam { get; internal set; }
+        public string HomeTeam { get; internal set; }
 
-        public IList<VolleyballSet> SetsOfTheMatch { get; internal set; }
+        public IDictionary<int, VolleyballSet> SetsOfTheMatch { get; internal set; }
     }
 }

@@ -8,18 +8,20 @@ namespace Scorecard
 {
     public class VolleyballSet
     {
+        public int SetNumber { get; private set; }
+
         public Teams CurrentlyServingTeam;
 
         public int HomePoints { get; internal set; }
         public int GuestPoints { get; internal set; }
 
-        public TeamTimeout[] HomeTimeouts { get; internal set; }
-        public TeamTimeout[] GuestTimeouts { get; internal set; }
+        //public TeamTimeout[] HomeTimeouts { get; internal set; }
+        //public TeamTimeout[] GuestTimeouts { get; internal set; }
 
-        public PlayerExchange[] HomeExchanges { get; internal set; }
-        public PlayerExchange[] GuestExchanges { get; internal set; }
+        //public PlayerExchange[] HomeExchanges { get; internal set; }
+        //public PlayerExchange[] GuestExchanges { get; internal set; }
 
-        public Player[] HomeLineup { get; internal set; }
-        public Player[] GuestLineup { get; internal set; }
+        //public Player[] HomeLineup { get; internal set; }
+        //public Player[] GuestLineup { get; internal set; }
     }
 }
