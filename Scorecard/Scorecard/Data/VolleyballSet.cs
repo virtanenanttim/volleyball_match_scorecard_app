@@ -8,6 +8,8 @@ namespace Scorecard
 {
     public class VolleyballSet
     {
+        public Teams CurrentlyServingTeam;
+
         public int HomePoints { get; internal set; }
         public int GuestPoints { get; internal set; }
 

@@ -89,7 +89,33 @@ namespace Scorecard
         #region Checks that must be done time to time
         public int CurrentSet { get; private set; }
 
+     
+        public void SetStartingTeam(Teams home)
+        {
+            
+        }
+
+        public void AddPoint(Teams team)
+        {
+            if (team == Teams.Home)
+            {
+                this.VolleyballMatch.SetsOfTheMatch[this.CurrentSet - 1].HomePoints++;
+            }
+
+            if (team == Teams.Guest)
+            {
+                this.VolleyballMatch.SetsOfTheMatch[this.CurrentSet - 1].GuestPoints++;
+            }
+        }
+
 
         #endregion
+    }
+
+    public enum Teams
+    {
+        None,
+        Home,
+        Guest
     }
 }
