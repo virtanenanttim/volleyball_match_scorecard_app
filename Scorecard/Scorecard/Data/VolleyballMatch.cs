@@ -8,13 +8,6 @@ namespace Scorecard
 {
     public class VolleyballMatch
     {
-        private ScorecardFiller filler;
-
-        public VolleyballMatch(ScorecardFiller filler)
-        {
-            this.filler = filler;
-        }
-
         public VolleyballMatch(string home, string guest)
         {
             this.HomeTeam = home;

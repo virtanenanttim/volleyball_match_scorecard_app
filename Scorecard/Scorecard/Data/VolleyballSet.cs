@@ -8,12 +8,37 @@ namespace Scorecard
 {
     public class VolleyballSet
     {
+        public bool HasEnded()
+        {
+            return (Math.Abs(this.HomePoints - this.GuestPoints) >= 2 && (this.HomePoints >= this.TargetPoints || this.GuestPoints >= this.TargetPoints));
+        }
+
         public int SetNumber { get; private set; }
 
-        public Teams CurrentlyServingTeam;
+        public Team CurrentlyServingTeam;
+        public int TargetPoints { get; private set; }
+
+        public VolleyballSet(int number, int targetPoints = 25)
+        {
+            this.SetNumber = number;
+            this.TargetPoints = targetPoints;
+        }
 
         public int HomePoints { get; internal set; }
         public int GuestPoints { get; internal set; }
+
+        public void ScorePoint(Team scorer)
+        {
+            if (scorer == Team.Home)
+            {
+                this.HomePoints++;
+            }
+
+            if (scorer == Team.Guest)
+            {
+                this.GuestPoints++;
+            }
+        }
 
         //public TeamTimeout[] HomeTimeouts { get; internal set; }
         //public TeamTimeout[] GuestTimeouts { get; internal set; }

@@ -50,8 +50,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ScorecardFillerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VolleyballSetTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Scorecard\Scorecard.csproj">

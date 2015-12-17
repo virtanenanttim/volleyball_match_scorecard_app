@@ -4,8 +4,13 @@
 //using System.Text;
 //using System.Threading.Tasks;
 
-//namespace Scorecard
-//{
+namespace Scorecard
+{ public enum Team
+    {
+        NotDefined, 
+        Home,
+        Guest
+    } }
 //    public class Team
 //    {
 //        public Team(string name, string abbreviation)

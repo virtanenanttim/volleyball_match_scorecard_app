@@ -47,7 +47,6 @@
     <Compile Include="Data\TeamTimeout.cs" />
     <Compile Include="Data\VolleyballMatch.cs" />
     <Compile Include="Data\VolleyballSet.cs" />
-    <Compile Include="ScorecardFiller.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Exceptions\" />
