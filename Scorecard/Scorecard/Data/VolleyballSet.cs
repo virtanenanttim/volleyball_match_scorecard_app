@@ -51,6 +51,16 @@ namespace Scorecard
             }
         }
 
+        public Team Winner()
+        {
+            if (this.HasEnded())
+            {
+                return this.HomePoints > this.GuestPoints ? Team.Home : Team.Guest;
+            }
+
+            return Team.NotDefined;
+        }
+
         public void StartingTeam(Team team)
         {
             this.CurrentlyServingTeam = team;

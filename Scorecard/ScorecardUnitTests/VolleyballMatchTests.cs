@@ -11,13 +11,6 @@ namespace ScorecardUnitTests
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClass]
     public class VolleyballMatchTests
     {
-        [TestMethod]
-        public void MatchTest()
-        {
-            var m = new VolleyballMatch("Home Team","Guest Team");
-
-            Assert.AreEqual("Home Team", m.HomeTeam);
-            Assert.AreEqual("Guest Team", m.GuestTeam);
-        }
+      
     }
 }

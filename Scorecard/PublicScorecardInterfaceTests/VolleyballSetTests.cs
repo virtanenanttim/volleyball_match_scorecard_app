@@ -54,6 +54,7 @@ namespace PublicScorecardInterfaceTests
             Assert.AreEqual(1, set.HomePoints);
             Assert.AreEqual(24, set.GuestPoints);
             Assert.IsFalse(set.HasEnded());
+            Assert.AreEqual(Team.NotDefined, set.Winner());
         }
 
         [TestMethod]
@@ -68,6 +69,7 @@ namespace PublicScorecardInterfaceTests
             Assert.IsTrue(set.HasEnded());
             Assert.AreEqual(0, set.HomePoints);
             Assert.AreEqual(25, set.GuestPoints);
+            Assert.AreEqual(Team.Guest, set.Winner());
         }
 
         [TestMethod]
@@ -82,6 +84,8 @@ namespace PublicScorecardInterfaceTests
             Assert.IsTrue(set.HasEnded());
             Assert.AreEqual(15, set.HomePoints);
             Assert.AreEqual(0, set.GuestPoints);
+
+            Assert.AreEqual(Team.Home, set.Winner());
         }
 
         [TestMethod]
@@ -123,11 +127,13 @@ namespace PublicScorecardInterfaceTests
             set.ScorePoint(Team.Home);
             Assert.AreEqual(18, set.GuestPoints);
             Assert.AreEqual(19, set.HomePoints);
+            Assert.AreEqual(Team.NotDefined, set.Winner());
             Assert.IsFalse(set.HasEnded());
             set.ScorePoint(Team.Home);
             Assert.AreEqual(20, set.HomePoints);
             Assert.AreEqual(18, set.GuestPoints);
             Assert.IsTrue(set.HasEnded());
+            Assert.AreEqual(Team.Home, set.Winner());
         }
 
         [TestMethod]
