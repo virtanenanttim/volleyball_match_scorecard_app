@@ -15,7 +15,7 @@ namespace PublicScorecardInterfaceTests
         public void CreateNewSet()
         {
             VolleyballSet set = new VolleyballSet(1);
-
+            
             Assert.AreEqual(1, set.SetNumber);
             Assert.AreEqual(0, set.HomePoints);
             Assert.AreEqual(0, set.GuestPoints);
@@ -105,7 +105,51 @@ namespace PublicScorecardInterfaceTests
             Assert.AreEqual(38, set.HomePoints);
             Assert.AreEqual(40, set.GuestPoints);
             Assert.IsTrue(set.HasEnded());
+        }
 
+        [TestMethod]
+        public void TeamWinsFifthSetAt20Points()
+        {
+            VolleyballSet set = new VolleyballSet(5, 15);
+            for (int i = 1; i <= 18; i++)
+            {
+                set.ScorePoint(Team.Home);
+                set.ScorePoint(Team.Guest);
+                Assert.AreEqual(i, set.HomePoints);
+                Assert.AreEqual(i, set.GuestPoints);
+                Assert.IsFalse(set.HasEnded(), "Ended at " + String.Format("{0}:{1}", set.HomePoints, set.GuestPoints));
+            }
+
+            set.ScorePoint(Team.Home);
+            Assert.AreEqual(18, set.GuestPoints);
+            Assert.AreEqual(19, set.HomePoints);
+            Assert.IsFalse(set.HasEnded());
+            set.ScorePoint(Team.Home);
+            Assert.AreEqual(20, set.HomePoints);
+            Assert.AreEqual(18, set.GuestPoints);
+            Assert.IsTrue(set.HasEnded());
+        }
+
+        [TestMethod]
+        public void ServingTeamCheck()
+        {
+            VolleyballSet set = new VolleyballSet(1);
+
+            Assert.AreEqual(Team.NotDefined, set.CurrentlyServingTeam);
+
+            set.StartingTeam(Team.Home);
+
+            set.ScorePoint(Team.Home);
+            set.ScorePoint(Team.Home);
+
+            Assert.AreEqual(Team.Home, set.CurrentlyServingTeam);
+
+            set.ScorePoint(Team.Guest);
+            Assert.AreEqual(Team.Guest, set.CurrentlyServingTeam);
+
+            set.ScorePoint(Team.Home);
+            
+            Assert.AreEqual(Team.Home, set.CurrentlyServingTeam);
 
         }
     }
